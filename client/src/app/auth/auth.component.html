@@ -1,0 +1,26 @@
+<form ngNativeValidate (ngSubmit)="onSubmit()" #userForm="ngForm">
+  <legend>{{isLogin ? 'Login' : 'Register'}}</legend>
+  <div class="form-group">
+    <label for="userId">ID</label>
+    <input type="number" min="1" step="1" required ngModel name="userId" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" required ngModel name="password" class="form-control">
+  </div>
+  <div class="form-group" *ngIf="!isLogin">
+    <label for="passwordConfirmation">Password confirmation</label>
+    <input type="password" required ngModel name="passwordConfirmation" class="form-control">
+  </div>
+  <div class="errorAlertsHolder" *ngIf="formErrors.length">
+    <p class="alert alert-danger" *ngFor="let i of formErrors">{{i}}</p>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="onSwitch()" [disabled]="authInProgress">Switch to
+    {{isLogin?'register':'login'}}</button>
+  <button type="submit" class="btn btn-success pull-right" [disabled]="authInProgress">
+    <span *ngIf="!authInProgress; else loader">Submit</span>
+    <ng-template #loader>
+      <div class="loader"></div>
+    </ng-template>
+  </button>
+</form>

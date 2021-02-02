@@ -1,0 +1,25 @@
+<form ngNativeValidate (ngSubmit)="onSubmit()" #messageForm="ngForm">
+  <legend>New message</legend>
+  <div class="form-group">
+    <label for="receiverId">Receiver ID</label>
+    <input type="number" min="0" step="1" required ngModel name="receiverId" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input type="text" required ngModel name="subject" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="Message">Message</label>
+    <textarea required ngModel name="message" class="form-control"></textarea>
+  </div>
+  <div class="errorAlertsHolder" *ngIf="formErrors.length">
+    <p class="alert alert-danger" *ngFor="let i of formErrors">{{i}}</p>
+  </div>
+  <button type="button" class="btn btn-danger" (click)="clearForm()" [disabled]="sendInProcess">Clear</button>
+  <button type="submit" class="btn btn-success pull-right" [disabled]="sendInProcess">
+    <span *ngIf="!sendInProcess; else loader">Submit</span>
+    <ng-template #loader>
+      <div class="loader"></div>
+    </ng-template>
+  </button>
+</form>

@@ -1,0 +1,11 @@
+<div class="backgroundLayer" (click)="routeBack()"></div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true" (click)="routeBack()"></span>
+    <h3 class="panel-title">{{message.subject}}</h3>
+  </div>
+  <div class="panel-body">
+    <p>{{messageStatus ? 'From' : 'To'}}: {{messageStatus ? message.senderId : message.receiverId}}</p>
+    <p>{{message.message}}</p>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="list-group-item clearfix" [routerLink]="message.messageId" routerLinkActive="active">
+  <div>
+    <h5 class="mb-1">{{message.subject}}</h5>
+    <small class="text-muted">{{message.creationDate | date:'short'}}</small>
+  </div>
+  <small class="text-muted">{{status ? 'From' : 'To'}}:{{status ? message.senderId : message.receiverId}}</small>
+  <span class="glyphicon glyphicon-trash pull-right" aria-hidden="true" (click)="deleteMessage($event)"></span>
+</div>

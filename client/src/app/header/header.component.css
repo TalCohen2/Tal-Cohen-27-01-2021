@@ -1,0 +1,69 @@
+nav {
+  margin: 0;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+nav>ul {
+  width: 100%;
+}
+
+nav > span.glyphicon {
+  display: none;
+}
+
+nav > ul.authenticated > li:last-child {
+  cursor: pointer;
+  float: right;
+}
+
+nav>ul>li>a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  white-space: nowrap;
+}
+
+nav>ul.auth>li {
+  cursor: default;
+}
+
+@media screen and (max-width:767px) { 
+
+  nav {
+    display: flex;
+  }
+
+  nav > span.glyphicon {
+    display: inline-block;
+    color: white;
+    align-self: center;
+    font-size: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+    padding: 10px 0;
+  }
+
+  nav>ul.authenticated {
+    display: none;
+  }
+
+  nav>ul.authenticated:hover, nav > span.glyphicon:hover ~ ul.authenticated  {
+    position: absolute;
+    width: 150px;
+    background-color: #222;
+    display: flex!important;
+    flex-direction: column;
+    left: 0px;
+    top: 50px;
+    margin: 0;
+  }
+
+  nav>ul.auth {
+    margin: 0;
+  }
+
+  nav > ul.auth > li {
+    display: inline-block;
+    
+  }
+}

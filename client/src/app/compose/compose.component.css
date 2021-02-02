@@ -1,0 +1,51 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+form {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px 10px;
+  margin: 20px auto 0;
+  max-width: 300px;
+  min-width: 200px;
+}
+
+form>.errorAlertsHolder {
+  margin-top: 10px;
+}
+
+form>div>textarea {
+  height: 100px;
+  resize: none;
+}
+
+form>legend {
+  text-align: center;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

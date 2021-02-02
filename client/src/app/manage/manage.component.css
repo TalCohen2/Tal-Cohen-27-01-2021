@@ -1,0 +1,55 @@
+div>div>.fullHeight {
+  height: calc(100vh - 61px);
+}
+
+div>div>.messageList {
+  border-right: 1px solid black;
+  padding-top: 10px;
+}
+
+div>div>.messageList>div {
+  margin: 10px 0;
+}
+
+div.row {
+  position: relative;
+}
+
+div>div>div>div.selectMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+div>div>div>div.selectMessage>p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+@media screen and (max-width:767px) {
+
+  div>div>.fullHeight {
+    height: calc(100vh - 61px);
+  }
+
+  div>div>.messageList {
+    border-right: none;
+  }
+
+  div>div>.message {
+    display: none;
+  }
+
+  div>div>.messageActive {
+    display: block;
+    position: absolute;
+    top: 0;
+    height: calc(100vh - 51px);
+  }
+  div>div>div>div.selectMessage {
+    display: none;
+  }
+}

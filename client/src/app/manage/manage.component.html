@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 fullHeight messageList">
+      <app-message-list></app-message-list>
+    </div>
+    <div class="col-sm-9 message fullHeight col-xs-12" [ngClass]="{'messageActive':messageOutlet.isActivated}">
+      <router-outlet #messageOutlet="outlet"></router-outlet>
+      <div *ngIf="!messageOutlet.isActivated" class="selectMessage">
+        <img src="../../assets/images/mail.png" alt="">
+        <p>please select message</p>
+      </div>
+    </div>
+  </div>
+</div>

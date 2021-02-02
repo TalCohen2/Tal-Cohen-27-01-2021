@@ -1,0 +1,12 @@
+<ul class="nav nav-tabs">
+  <li role="presentation" (click)="getMessagesByStatus(true)" [ngClass]="{'active':status}" class="tab"><a>Received</a>
+  </li>
+  <li role="presentation" (click)="getMessagesByStatus(false)" [ngClass]="{'active':!status}" class="tab"><a>Sent</a>
+  </li>
+</ul>
+<div class="list-group" *ngIf="messages.length;else noneMessages">
+  <app-message-item *ngFor="let i of messages" [message]="i" [status]="status"></app-message-item>
+</div>
+<ng-template #noneMessages>
+  <p>There are no messages to display</p>
+</ng-template>

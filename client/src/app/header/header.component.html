@@ -1,0 +1,24 @@
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" *ngIf="userStatus"></span>
+
+  <ul class="nav navbar-nav authenticated" *ngIf="userStatus; else authTab">
+    <li [ngClass]="{'active':compose.isActive}">
+      <a routerLink="compose" routerLinkActive #compose='routerLinkActive'>Compose message</a>
+    </li>
+    <li [ngClass]="{'active':manage.isActive}">
+      <a routerLink="manage" routerLinkActive #manage='routerLinkActive'>Manage messages</a>
+    </li>
+    <li>
+      <a (click)="logout()">log out</a>
+    </li>
+  </ul>
+  
+  
+  <ng-template #authTab>
+    <ul class="nav navbar-nav auth">
+      <li class="active">
+        <a>Authentication</a>
+      </li>
+    </ul>
+  </ng-template>
+</nav>

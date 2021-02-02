@@ -1,0 +1,43 @@
+.active .text-muted {
+  color: white !important;
+}
+
+h5 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  color: black;
+}
+
+.list-group-item {
+  z-index: 0 !important;
+  outline: 0;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa
+}
+
+.active {
+  background-color: #337ab7 !important;
+}
+
+.active>div>h5 {
+  color: white !important;
+}
+
+.active:focus {
+  outline: 0;
+}
+
+.glyphicon-trash {
+  font-size: 17px;
+}
+
+div small {
+  max-width: calc(100% - 17px);
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

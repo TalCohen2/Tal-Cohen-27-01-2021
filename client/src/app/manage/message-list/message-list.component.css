@@ -1,0 +1,20 @@
+.list-group {
+  height: calc(100vh - 103px);
+  overflow-y: auto;
+}
+
+app-message-item,
+.nav>.tab {
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+p {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
